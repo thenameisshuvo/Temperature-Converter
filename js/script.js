@@ -3,16 +3,16 @@ const fromUnit = document.getElementById('fromUnit');
 const toUnit = document.getElementById('toUnit');
 const resultMessage = document.getElementById('resultMessage');
 
-// Habilitar la conversión automáticamente si todos los campos están llenos
+
 function checkFieldsAndConvert() {
     if (temperatureInput.value && fromUnit.value && toUnit.value) {
         convertAndDisplayResult();
     } else {
-        resultMessage.textContent = ''; // Limpiar el mensaje si falta algún campo
+        resultMessage.textContent = ''; 
     }
 }
 
-// Función para convertir y mostrar el resultado
+
 function convertAndDisplayResult() {
     const temperature = parseFloat(temperatureInput.value);
     const from = fromUnit.value;
@@ -22,15 +22,15 @@ function convertAndDisplayResult() {
     resultMessage.textContent = `${temperature} ${from} es ${result.toFixed(2)} ${to}`;
 }
 
-// Función de conversión de temperatura
+
 function convertTemperature(temp, from, to) {
     let result;
 
     if (from === to) {
-        return temp; // Si las unidades son iguales, no hay conversión.
+        return temp; 
     }
 
-    // Convertir desde Celsius
+   
     if (from === 'Celsius') {
         if (to === 'Fahrenheit') {
             result = (temp * 9/5) + 32;
@@ -39,7 +39,7 @@ function convertTemperature(temp, from, to) {
         }
     }
 
-    // Convertir desde Fahrenheit
+
     else if (from === 'Fahrenheit') {
         if (to === 'Celsius') {
             result = (temp - 32) * 5/9;
@@ -48,7 +48,7 @@ function convertTemperature(temp, from, to) {
         }
     }
 
-    // Convertir desde Kelvin
+  
     else if (from === 'Kelvin') {
         if (to === 'Celsius') {
             result = temp - 273.15;
@@ -61,16 +61,13 @@ function convertTemperature(temp, from, to) {
 }
 
 
-//Limitar el rango de escritura en el input de entrada
+
 function limitLength(input) {
     if (input.value.length > 4) {
       input.value = input.value.slice(0, 4);
     }
 }
 
-
-
-// Añadir eventos de cambio a los campos
 temperatureInput.addEventListener('input', checkFieldsAndConvert);
 fromUnit.addEventListener('change', checkFieldsAndConvert);
 toUnit.addEventListener('change', checkFieldsAndConvert);
