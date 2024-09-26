@@ -96,3 +96,10 @@ button:not(:disabled):focus {
     color: green;
 }
 
+input:valid {
+    border-color: #4CAF50; /* Green */
+}
+
+input:invalid {
+    border-color: #f44336; /* Red */
+}
