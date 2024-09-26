@@ -75,3 +75,11 @@ toUnit.addEventListener('change', checkFieldsAndConvert);
 
 
 
+const resetButton = document.getElementById('resetButton');
+
+resetButton.addEventListener('click', () => {
+    temperatureInput.value = '';
+    fromUnit.selectedIndex = 0;
+    toUnit.selectedIndex = 0;
+    resultMessage.textContent = '';
+});
