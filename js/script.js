@@ -84,3 +84,18 @@ resetButton.addEventListener('click', () => {
     resultMessage.textContent = '';
 });
 
+const historyList = document.getElementById('historyList');
+
+function convertAndDisplayResult() {
+    const temperature = parseFloat(temperatureInput.value);
+    const from = fromUnit.value;
+    const to = toUnit.value;
+
+    const result = convertTemperature(temperature, from, to);
+    resultMessage.textContent = `${temperature} ${from} is ${result.toFixed(2)} ${to}`;
+
+    // Add to history
+    const historyItem = document.createElement('li');
+    historyItem.textContent = `${temperature} ${from} = ${result.toFixed(2)} ${to}`;
+    historyList.appendChild(historyItem);
+}
