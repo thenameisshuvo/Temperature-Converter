@@ -19,7 +19,7 @@ function convertAndDisplayResult() {
     const to = toUnit.value;
 
     const result = convertTemperature(temperature, from, to);
-    resultMessage.textContent = `${temperature} ${from} es ${result.toFixed(2)} ${to}`;
+    resultMessage.textContent = `${temperature} ${from} is ${result.toFixed(2)} ${to}`;
 }
 
 
